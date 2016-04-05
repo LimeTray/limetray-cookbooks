@@ -5,7 +5,7 @@ node[:deploy].each do |application, deploy|
     cwd "#{deploy[:deploy_to]}"
     code <<-EOH
     cd shared
-    mkdir order-logs mysql_logs redis_logs
+    mkdir -p order-logs mysql_logs redis_logs
     chmod -R 777 order-logs mysql_logs redis_logs
     ln -s #{deploy[:deploy_to]}/shared/order-logs #{deploy[:deploy_to]}/current/order-logs
     ln -s #{deploy[:deploy_to]}/shared/mysql_logs #{deploy[:deploy_to]}/current/mysql_logs
