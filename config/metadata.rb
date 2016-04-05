@@ -1,0 +1,6 @@
+name "config"
+maintainer "LimeTray"
+maintainer_email "limetray@limetray.com"
+license "MIT"
+description "Configure Environment Variables in env.php"
+version "1.0.0"
