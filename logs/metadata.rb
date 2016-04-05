@@ -1,6 +1,0 @@
-name "php"
-maintainer "Dwight Watson"
-maintainer_email "dwight@studiousapp.com"
-license "MIT"
-description "Configure a Laravel application"
-version "1.0.0"
