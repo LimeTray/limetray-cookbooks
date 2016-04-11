@@ -1,5 +1,5 @@
 node[:deploy].each do |application, deploy|
-  script "default" do
+  script "limetraycms" do
     interpreter "bash"
     user "root"
     cwd "#{deploy[:deploy_to]}"

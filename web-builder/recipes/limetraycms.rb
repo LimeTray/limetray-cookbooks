@@ -1,5 +1,5 @@
 node[:deploy].each do |application, deploy|
-  script "default" do
+  script "limetraycms" do
   	if application == 'limetraycms'
 	    interpreter "bash"
 	    user "root"

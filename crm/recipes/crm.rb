@@ -1,5 +1,5 @@
 node[:deploy].each do |application, deploy|
-  script "default" do
+  script "crm" do
     interpreter "bash"
     user "root"
     cwd "#{deploy[:deploy_to]}"

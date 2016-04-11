@@ -1,5 +1,5 @@
 node[:deploy].each do |application, deploy|
-  script "default" do
+  script "web-builder" do
   	if application == 'web-builder'
 	    interpreter "bash"
 	    user "root"
