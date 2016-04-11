@@ -14,7 +14,7 @@ node[:deploy].each do |application, deploy|
     chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/order-logs
     chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/mysql_logs
     chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/redis_logs
-    chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/logs/error
+    chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/logs
     EOH
   end
 end

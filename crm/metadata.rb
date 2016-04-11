@@ -1,0 +1,6 @@
+name "crm"
+maintainer "LimeTray"
+maintainer_email "limetray@limetray.com"
+license "MIT"
+description "crm"
+version "1.0.0"
