@@ -1,6 +1,0 @@
-name "web-builder"
-maintainer "LimeTray"
-maintainer_email "limetray@limetray.com"
-license "MIT"
-description "web-builder"
-version "1.0.0"
