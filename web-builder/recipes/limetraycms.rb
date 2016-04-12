@@ -5,8 +5,8 @@ node[:deploy].each do |application, deploy|
         user "root"
         cwd "#{deploy[:deploy_to]}"
         code <<-EOH
-        if [ -d "/mnt/srv/www/web-builder/current" ]; then
-            cp /mnt/srv/www/web-builder/current #{deploy[:deploy_to]}
+        if [ -d "/mnt/srv/www/web_builder/current" ]; then
+            cp /mnt/srv/www/web_builder/current #{deploy[:deploy_to]}
         fi 
         EOH
     end
