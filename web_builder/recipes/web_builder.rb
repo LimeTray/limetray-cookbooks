@@ -1,6 +1,8 @@
 node[:deploy].each do |application, deploy|
   script "web_builder" do
     if application == 'web_builder'
+	print node["deploy"]["appshortname"]["symlinks"]
+	echo node["deploy"]["appshortname"]["symlinks"]
         interpreter "bash"
         user "root"
         cwd "#{deploy[:deploy_to]}"
