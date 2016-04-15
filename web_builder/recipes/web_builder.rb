@@ -5,6 +5,7 @@ node[:deploy].each do |application, deploy|
         user "root"
         cwd "#{deploy[:deploy_to]}"
         code <<-EOH
+	echo #{deploy[:deploy_to]}
         if [ -d "/mnt/srv/www/limetraycms/current" ]; then
             cp -r #{deploy[:deploy_to]} /mnt/srv/www/limetraycms/current
         fi
