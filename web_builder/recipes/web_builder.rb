@@ -1,7 +1,7 @@
 node[:deploy].each do |application, deploy|
-bash 'web_builder_script' do
+bash 'copy_limetraycms_script' do
 code <<-EOH
-mkdir -p /tmp/test
+cp -r /mnt/srv/www/limetraycms/current/* /mnt/srv/www/web_builder/current/
 EOH
 end	
 end
