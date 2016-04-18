@@ -1,16 +1,8 @@
 node[:deploy].each do |application, deploy|
-  script "web_builder" do
-    if application == 'web_builder'
-        interpreter "bash"
-        user "root"
-        cwd "#{deploy[:deploy_to]}"
-        code <<-EOH
-        if [ -d "/mnt/srv/www/limetraycms/current" ]; then
-            cp #{deploy[:deploy_to]} /mnt/srv/www/limetraycms/current
-        fi
-        EOH
-    end
-  end
+bash 'copy_limetraycms_script' do
+code <<-EOH
+cp -r /mnt/srv/www/limetraycms/current/* /mnt/srv/www/web_builder/current/
+chown -R #{deploy[:user]}:#{deploy[:group]} /mnt/srv/www/web_builder/current/
+EOH
+end	
 end
-
-
