@@ -1,4 +1,5 @@
 node[:deploy].each do |application, deploy|
+  Chef::Log.info(node[:deploy][:application_name])
   script "storage_permissions" do
   	Chef::Log.info(node[:deploy][:application_name])
 	# interpreter "bash"

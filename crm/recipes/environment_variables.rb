@@ -1,4 +1,5 @@
 node[:deploy].each do |application, deploy|
+  Chef::Log.info(node[:deploy][:application_name])
   template "#{deploy[:deploy_to]}/current/.env.php" do
     source ".env.erb"
     mode 0755
