@@ -4,7 +4,9 @@ node[:deploy].each do |application, deploy|
     user "root"
     cwd "#{deploy[:deploy_to]}/current"
     code <<-EOH
-    chmod -R 777 storage/app storage/framework storage/logs bootstrap/
+    if [ -d "storage/logs" ]; then
+    	chmod -R 777 storage/app storage/framework storage/logs bootstrap/
+    fi 
     EOH
   end
 end

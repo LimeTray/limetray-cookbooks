@@ -4,11 +4,13 @@ node[:deploy].each do |application, deploy|
     user "root"
     cwd "#{deploy[:deploy_to]}"
     code <<-EOH
-    chmod -R 777 current/storage/app current/storage/framework current/storage/logs
-    mv current/storage/* shared
-    rm -rf current/storage
-    ln -s #{deploy[:deploy_to]}/shared #{deploy[:deploy_to]}/current/storage
-    chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/storage
+    if [ -d "current/storage/logs" ]; then
+        chmod -R 777 current/storage/app current/storage/framework current/storage/logs
+        mv current/storage/* shared
+        rm -rf current/storage
+        ln -s #{deploy[:deploy_to]}/shared #{deploy[:deploy_to]}/current/storage
+        chown -h #{deploy[:user]}:#{deploy[:group]} #{deploy[:deploy_to]}/current/storage
+    fi 
     EOH
   end
 end
