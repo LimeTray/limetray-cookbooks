@@ -10,6 +10,6 @@ service "sysklogd"
 
 link "/etc/localtime" do
   to "/usr/share/zoneinfo/#{timezone}"
-  notifies :restart, resources(:service => [ "sysklogd"]), :delayed
+  # notifies :restart, resources(:service => [ "sysklogd"]), :delayed
   not_if "readlink /etc/localtime | grep -q '#{timezone}$'"
 end
