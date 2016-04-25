@@ -6,7 +6,7 @@ node[:deploy].each do |application, deploy|
     code <<-EOH
     if [ -f "current/lib/common.functions.php" ]; then
     	cd shared
-	    mkdir -p order-logs mysql_logs redis_logs logs/error logs/error/mb_logs logs/error/mb_er_logs
+	    mkdir -p order-logs mysql_logs redis_logs logs/error logs/error/mb_logs logs/error/mb_er_logs logs/error/mysql 
 	    chmod -R 777 order-logs mysql_logs redis_logs logs
 	    ln -s #{deploy[:deploy_to]}/shared/order-logs #{deploy[:deploy_to]}/current/order-logs
 	    ln -s #{deploy[:deploy_to]}/shared/mysql_logs #{deploy[:deploy_to]}/current/mysql_logs
