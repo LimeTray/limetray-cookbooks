@@ -8,12 +8,15 @@
 
 # The following shows how to override the mod_php5_apache2 packages:
 #
-#normal[:mod_php5_apache2][:packages] = [ 'php-xml',
-#                                         'php-common',
-#                                         'php-xmlrpc',
-#                                         'php-devel',
-#                                         'php-gd',
-#                                         'php-cli',
-#                                         'php-pear-Auth-SASL',
-#                                         'php-mysql',
-#                                         'php-mcrypt' ]
+
+normal[:mod_php5_apache2][:packages] = [ 'php56-devel',
+                                         'php56-mcrypt',
+                                         'php56-mbstring',
+                                         'php56-gd',
+                                         'php56-bcmath',
+                                         'php56-tidy',
+                                         'php56-pdo',
+                                         'php56-mysqlnd',
+                                         'php56-pecl-apcu',
+					 'php56-pecl-memcached',
+					 'php56-opcache' ]
